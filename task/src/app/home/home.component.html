@@ -1,0 +1,66 @@
+<app-header [headerTrendingMovies]='trendingMovies'></app-header>
+<div class="row">
+  <div class="col-md-4">
+    <div class="brdr my-4 w-25"> </div>
+    <h2>Trending Movies <br> to watch right now</h2>
+    <p class="lead scnd-color">We offer you to watch trending movies</p>
+    <div class="brdr my-4 w-100"> </div>
+
+  </div>
+  <div *ngFor="let item of trendingMovies" class="col-md-2 position-relative">
+  <div class="movie">
+    <a [routerLink]="['/moviesdetails',item.id]">
+    <img [src]="imgSrc+item.poster_path" class="w-100" alt="">
+    <!-- seo will see it h3 but in design it will be like h6 -->
+    <h3 class="h6 mt-2  ">{{item.title}}</h3>
+    <div class="vote p-2 text-white position-absolute end-0 top-0">
+    {{item.vote_average}}
+    </div>
+    </a>
+  </div>
+  </div>
+</div>
+
+<div class="row my-5">
+  <div class="col-md-4">
+    <div class="brdr my-4 w-25"> </div>
+    <h2>Trending Tv shows <br> to watch right now</h2>
+    <p class="lead scnd-color">We offer you to watch trending Tv shows</p>
+    <div class="brdr my-4 w-100"> </div>
+
+  </div>
+  <div *ngFor="let item of trendingTv" class="col-md-2 position-relative">
+  <div class="movie">
+<a [routerLink]="['/moviesdetails',item.id]">
+    <img [src]="imgSrc+item.poster_path" class="w-100" alt="">
+    <!-- seo will see it h3 but in design it will be like h6 -->
+    <h3 class="h6 mt-2  ">{{item.name}}</h3>
+    <div class="vote p-2 text-white position-absolute end-0 top-0">
+    {{item.vote_average}}
+    </div>
+</a>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="brdr my-4 w-25"> </div>
+    <h2> shows that are now playing <br> </h2>
+    <p class="lead scnd-color">these are shows that are now playing</p>
+    <div class="brdr my-4 w-100"> </div>
+
+  </div>
+  <div *ngFor="let item of trendingPeople" class="col-md-2 position-relative">
+  <div class="movie">
+    <a [routerLink]="['/moviesdetails',item.id]">
+    <img [src]="imgSrc+item.poster_path" class="w-100" alt="">
+    <!-- seo will see it h3 but in design it will be like h6 -->
+    <h3 class="h6 mt-2  ">{{item.title}} {{item.name}}</h3>
+    <div class="vote p-2 text-white position-absolute end-0 top-0">
+    {{item.vote_average}}
+    </div>
+    </a>
+  </div>
+  </div>
+</div>
